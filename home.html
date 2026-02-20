@@ -65,11 +65,11 @@
                 <img src="./assets/opt-3.png" alt="">
                 <p>Transfer Money</p>
             </button>
-            <button class="add-money btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('get-bonus')" class="add-money btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
-            <button class="add-money btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('pay-bill')" class="add-money btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
@@ -149,10 +149,55 @@
         </div>
     </section>
 
+    <!-- Get Bonus section -->
+    <section id="get-bonus" class="w-11/12 mx-auto py-5 hidden">
+        <h4 class="text-xl font-bold mb-5">Get Bonus</h4>
+        <div class="card bg-base-100 w-full shrink-0 shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset space-y-2">
+                    <label class="label font-bold text-neutral">Enter Bonus Coupon</label>
+                    <input id="coupon-input" type="text" class="input w-full rounded-full"
+                        placeholder="Enter your coupon" />                    
+                    <button id="get-bonus-btn" class="btn btn-primary mt-4 rounded-full">Get Bonus</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pay Bill section -->
+    <section id="pay-bill" class="w-11/12 mx-auto py-5 hidden">
+        <h4 class="text-xl font-bold mb-5">Pay Bill</h4>
+        <div class="card bg-base-100 w-full shrink-0 shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset space-y-2">
+                    <label class="label font-bold text-neutral">Select To Pay</label>
+                    <select id="pay-bill-bank" class="select w-full rounded-full">
+                        <option disabled selected>Select A Bank</option>
+                        <option value="DBBL">DBBL</option>
+                        <option value="IBBL">IBBL</option>
+                        <option value="UCCB">UCCB</option>
+                    </select>
+                    <label class="label font-bold text-neutral">Biller Account Number</label>
+                    <input id="biller-account-number" type="number" class="input w-full rounded-full"
+                        placeholder="Enter account number" />
+                    <label class="label font-bold text-neutral">Amount To Pay</label>
+                    <input id="bill-input" type="number" class="input w-full rounded-full"
+                        placeholder="Add Amount to Pay" />
+                    <label class="label font-bold text-neutral">Pin Number</label>
+                    <input id="pin-inputed" type="password" maxlength="4" class="w-full input rounded-full"
+                        placeholder="Enter 4 digit pin number" />
+                    <button id="pay-bill-btn" class="btn btn-primary mt-4 rounded-full">Pay Now</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
     <script src="./scrip/machine.js"></script>
     <script src="./scrip/addMoney.js"></script>
     <script src="./scrip/cashout.js"></script>
     <script src="./scrip/transferMoney.js"></script>
+    <script src="./scrip/getBonus.js"></script>
+    <script src="./scrip/payBill.js"></script>
 </body>
 
 </html>
