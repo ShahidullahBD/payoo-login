@@ -26,6 +26,18 @@ document.getElementById('send-now-btn').addEventListener('click', function(){
         //5-1- true:: show an alert > set balance
         alert('Transfer succesfull');
         setBalance(newBalance);
+
+        const history = document.getElementById('history');
+
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+        <div class="bg-slate-100 p-2">
+        ${transferAmount} Taka Transfer succesfull to ${userNumber}
+        new balance is ${newBalance} at ${new Date ()}
+        </div>
+        `
+        history.append(newHistory);
+
     }else{
         //5-2- false:: show an error > return
         alert('Invalid pin');

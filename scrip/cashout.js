@@ -29,6 +29,18 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
         //5-1- true:: show an alert > set balance
         alert('Withdraw succesfull');
         setBalance(newBalance);
+
+        const history = document.getElementById('history');
+
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+        <div class="bg-slate-100 p-2">
+        ${withdrawAmount} Taka Withdraw Success to ${agentNumber}
+        new balance is ${newBalance} at ${new Date ()}
+        </div>
+        `
+        history.append(newHistory);
+
     }else{
         //5-2- false:: show an error > return
         alert('Invalid pin');
